@@ -1,0 +1,61 @@
+{
+  "flops": {
+    "analytical_flops": 3523739648,
+    "measured_flops": 3601461248.0,
+    "ratio_measured_over_analytical": 1.0220565671031097,
+    "approx_6n_forward_flops": 3283881984.0
+  },
+  "memory": {
+    "this_project_model": {
+      "params_bytes": 3272964,
+      "grad_bytes": 3272964,
+      "optimizer_state_bytes": 6545928,
+      "activation_bytes": 29360128,
+      "activation_bytes_checkpointed": 4194304
+    },
+    "gpt2_small_scale": {
+      "params_bytes": 652349764,
+      "grad_bytes": 652349764,
+      "optimizer_state_bytes": 1304699528,
+      "activation_bytes": 452984832,
+      "activation_bytes_checkpointed": 75497472
+    }
+  },
+  "communication": {
+    "device_counts": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "data_parallel": [
+      3272964.0,
+      4909446.0,
+      5727687.0,
+      6136807.5,
+      6341367.75
+    ],
+    "tensor_parallel": [
+      8388608.0,
+      12582912.0,
+      14680064.0,
+      15728640.0,
+      16252928.0
+    ],
+    "pipeline_parallel_per_device": [
+      16777216,
+      16777216,
+      16777216,
+      16777216,
+      16777216
+    ],
+    "pipeline_parallel_total": [
+      8388608,
+      25165824,
+      58720256,
+      125829120,
+      260046848
+    ]
+  }
+}

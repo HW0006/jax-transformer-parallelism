@@ -1,0 +1,22 @@
+Matplotlib is building the font cache; this may take a moment.
+Baseline (warmup_cosine, peak_lr=5e-4, clip=1.0)...
+  seed=0 done in 51.9s, final train loss=1.7217
+  seed=1 done in 48.8s, final train loss=1.7813
+  seed=2 done in 49.9s, final train loss=1.7827
+Ablation: constant LR schedule...
+  seed=0 done in 48.2s, final train loss=1.6375
+  seed=1 done in 52.5s, final train loss=1.6903
+  seed=2 done in 49.5s, final train loss=1.6765
+Ablation: gradient clipping (peak_lr=3e-3)...
+  seed=0 done in 11.2s, final train loss=2.1318
+  seed=1 done in 10.6s, final train loss=2.1209
+  seed=2 done in 10.7s, final train loss=2.0905
+  seed=0 done in 10.5s, final train loss=2.2931
+  seed=1 done in 11.0s, final train loss=2.1372
+  seed=2 done in 11.0s, final train loss=2.1469
+
+=== Summary (mean +/- std over 3 seeds) ===
+baseline: train_loss=1.7661+/-0.0032  val_loss=1.8900+/-0.0037  grad_norm_mean=1.72  grad_norm_max_mean=5.49
+schedule_constant: train_loss=1.6857+/-0.0007  val_loss=1.8305+/-0.0070  grad_norm_mean=1.55  grad_norm_max_mean=5.44
+clip_1.0: train_loss=2.1360+/-0.0084  val_loss=2.1595+/-0.0076  grad_norm_mean=0.92  grad_norm_max_mean=12.41
+clip_none: train_loss=2.2139+/-0.0548  val_loss=2.2288+/-0.0535  grad_norm_mean=1.16  grad_norm_max_mean=22.78

@@ -1,0 +1,34 @@
+{
+  "baseline": {
+    "train_loss_mean": 1.766097550392151,
+    "train_loss_std": 0.003220758947262091,
+    "val_loss_mean": 1.8900142014026642,
+    "val_loss_std": 0.0036524796029093606,
+    "grad_norm_mean": 1.7193617525100706,
+    "grad_norm_max_mean": 5.491185824076335
+  },
+  "schedule_constant": {
+    "train_loss_mean": 1.6857411273320517,
+    "train_loss_std": 0.0007146774254060179,
+    "val_loss_mean": 1.830515525738398,
+    "val_loss_std": 0.007033403549727114,
+    "grad_norm_mean": 1.5453255965444777,
+    "grad_norm_max_mean": 5.439384778340657
+  },
+  "clip_1.0": {
+    "train_loss_mean": 2.1360057417551674,
+    "train_loss_std": 0.008356171208867873,
+    "val_loss_mean": 2.159511903921763,
+    "val_loss_std": 0.0076144038000102825,
+    "grad_norm_mean": 0.9237034740050634,
+    "grad_norm_max_mean": 12.406294027964273
+  },
+  "clip_none": {
+    "train_loss_mean": 2.213893257776896,
+    "train_loss_std": 0.05475602424981663,
+    "val_loss_mean": 2.2287616531054177,
+    "val_loss_std": 0.05347795433507014,
+    "grad_norm_mean": 1.1589086559414863,
+    "grad_norm_max_mean": 22.775002479553223
+  }
+}

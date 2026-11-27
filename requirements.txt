@@ -1,0 +1,5 @@
+jax==0.12.1
+jaxlib==0.12.1
+optax==0.2.9
+numpy==2.5.5
+matplotlib==3.11.2
