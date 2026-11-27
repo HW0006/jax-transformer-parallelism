@@ -1,8 +1,6 @@
 # A from-scratch transformer, trained and parallelized three ways, in raw JAX
 
-
-
-A prior project (an RLHF/DPO fine-tune, using HuggingFace + TRL as intended) demonstrated none of this — it used existing libraries as black boxes on a single GPU. This project is the direct answer: every piece of the architecture, every parallelism strategy, and one collective communication primitive are implemented from scratch, correctness-tested against a ground truth, and analyzed quantitatively.
+Every piece of a decoder-only transformer, three parallelism strategies (data, tensor and pipeline), and one collective communication primitive (a ring all-reduce) are implemented from scratch in raw JAX, tested for correctness against a single-device reference, and analyzed quantitatively.
 
 **The honest constraint, stated up front:** this was built with no GPU cluster — just a laptop CPU. The trick that makes real distributed-training code possible anyway is JAX's CPU device simulation (`XLA_FLAGS=--xla_force_host_platform_device_count=N`), which exposes N independent logical devices for `pmap` to target. This proves **correctness** (the parallel code computes the exact right answer) and lets us compute **real communication-volume math** (how many bytes actually move between devices). It does **not** prove wall-clock speedup — simulated devices share one physical CPU, so there is no claim anywhere in this repo about training being faster in walltime. Every number here is either a correctness check or a byte/FLOP count, never a timing comparison.
 
@@ -145,4 +143,4 @@ python3 -m experiments.run_analysis      # FLOP/memory/communication analysis ->
 
 ## What this project is not
 
-It is not a claim of distributed-training speedup (no real multi-device hardware was used — see the constraint stated at the top), not a large-scale model (818K parameters, char-level, single machine), and not a production training system. It is a from-scratch, correctness-verified, quantitatively-analyzed demonstration of the specific mechanics — architecture, training dynamics, data/tensor/pipeline parallelism, and a hand-written collective — that the job requirements named.
+It is not a claim of distributed-training speedup (no real multi-device hardware was used — see the constraint stated at the top), not a large-scale model (818K parameters, char-level, single machine), and not a production training system. It is a from-scratch, correctness-verified, quantitatively-analyzed demonstration of the specific mechanics of how transformers are trained and parallelized: architecture, training dynamics, data/tensor/pipeline parallelism, and a hand-written collective.
