@@ -1,13 +1,6 @@
 # A from-scratch transformer, trained and parallelized three ways, in raw JAX
 
-This project exists to close a specific, named gap. A frontier-lab "Research Engineer/Scientist" posting asked for:
 
-- Deep familiarity with transformer architecture, training dynamics, and large-scale optimization
-- Hands-on experience with distributed training — data, tensor, and pipeline parallelism tradeoffs
-- A track record of original technical work in ML training or systems
-- Rigorous experiments at scale — baselines, ablations, enough statistical care to trust a result
-- Quantitative reasoning about compute, memory, and communication cost
-- Strong Python + JAX/PyTorch, comfort changing code at every layer of the stack
 
 A prior project (an RLHF/DPO fine-tune, using HuggingFace + TRL as intended) demonstrated none of this — it used existing libraries as black boxes on a single GPU. This project is the direct answer: every piece of the architecture, every parallelism strategy, and one collective communication primitive are implemented from scratch, correctness-tested against a ground truth, and analyzed quantitatively.
 
